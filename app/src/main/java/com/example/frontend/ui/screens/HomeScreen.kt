@@ -13,13 +13,13 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Code
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Quiz
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -36,6 +36,7 @@ import com.example.frontend.ui.theme.NeonCyan
 @Composable
 fun HomeScreen(
     onLessonClick: (String) -> Unit,
+    onReferenceClick: () -> Unit,
     onQuizClick: () -> Unit,
     onEditorClick: () -> Unit
 ) {
@@ -83,6 +84,12 @@ fun HomeScreen(
                     onClick = { },
                     icon = { Icon(Icons.Default.Code, contentDescription = "Home") },
                     label = { Text("Modules") }
+                )
+                NavigationBarItem(
+                    selected = false,
+                    onClick = onReferenceClick,
+                    icon = { Icon(Icons.Default.Search, contentDescription = "Reference") },
+                    label = { Text("Reference") }
                 )
                 NavigationBarItem(
                     selected = false,
@@ -147,7 +154,7 @@ fun HomeScreen(
                                     .padding(horizontal = 8.dp, vertical = 4.dp)
                             ) {
                                 Text(
-                                    text = "LIVE EDITOR",
+                                    text = "W3-STYLE STUDIO",
                                     style = MaterialTheme.typography.labelLarge,
                                     color = MatrixGreen,
                                     fontSize = 10.sp
@@ -162,7 +169,7 @@ fun HomeScreen(
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Interactive curriculum with real-time code editor and instant feedback quizzes.",
+                            text = "Interactive curriculum with search reference glossary, real-time code editor and quizzes.",
                             style = MaterialTheme.typography.bodyMedium
                         )
                         Spacer(modifier = Modifier.height(16.dp))
@@ -176,13 +183,13 @@ fun HomeScreen(
                                 Text("Open Studio", color = Color.Black, fontWeight = FontWeight.Bold)
                             }
                             OutlinedButton(
-                                onClick = onQuizClick,
+                                onClick = onReferenceClick,
                                 colors = ButtonDefaults.outlinedButtonColors(contentColor = ElectricViolet),
                                 border = BorderStroke(1.dp, ElectricViolet)
                             ) {
-                                Icon(Icons.Default.Quiz, contentDescription = null, modifier = Modifier.size(18.dp))
+                                Icon(Icons.Default.Search, contentDescription = null, modifier = Modifier.size(18.dp))
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text("Take Quiz")
+                                Text("Tag Ref")
                             }
                         }
                     }

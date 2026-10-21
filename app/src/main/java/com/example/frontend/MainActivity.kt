@@ -14,6 +14,7 @@ import com.example.frontend.ui.screens.CodeEditorScreen
 import com.example.frontend.ui.screens.HomeScreen
 import com.example.frontend.ui.screens.LessonDetailScreen
 import com.example.frontend.ui.screens.PracticeQuizScreen
+import com.example.frontend.ui.screens.ReferenceScreen
 import com.example.frontend.ui.theme.CyberAcademyTheme
 import java.net.URLDecoder
 import java.net.URLEncoder
@@ -44,11 +45,35 @@ fun WebAcademyApp() {
                 onLessonClick = { lessonId ->
                     navController.navigate("lesson/$lessonId")
                 },
+                onReferenceClick = {
+                    navController.navigate("reference")
+                },
                 onQuizClick = {
                     navController.navigate("quiz")
                 },
                 onEditorClick = {
                     navController.navigate("editor")
+                }
+            )
+        }
+
+        composable("reference") {
+            ReferenceScreen(
+                onHomeClick = {
+                    navController.navigate("home") {
+                        popUpTo("home") { inclusive = true }
+                    }
+                },
+                onQuizClick = {
+                    navController.navigate("quiz")
+                },
+                onEditorClick = {
+                    navController.navigate("editor")
+                },
+                onTryInEditor = { code, css ->
+                    val encodedHtml = URLEncoder.encode(code, StandardCharsets.UTF_8.toString())
+                    val encodedCss = URLEncoder.encode(css, StandardCharsets.UTF_8.toString())
+                    navController.navigate("editor?html=$encodedHtml&css=$encodedCss")
                 }
             )
         }

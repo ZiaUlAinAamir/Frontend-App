@@ -33,3 +33,11 @@ data class CodeTemplate(
     val htmlCode: String,
     val cssCode: String
 )
+
+data class ReferenceItem(
+    val name: String,
+    val category: String, // "HTML Tag" or "CSS Property"
+    val description: String,
+    val syntax: String,
+    val exampleCode: String
+)
