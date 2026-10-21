@@ -46,39 +46,45 @@ private val CyberDarkColorScheme = darkColorScheme(
 val CyberTypography = Typography(
     displayLarge = TextStyle(
         fontFamily = FontFamily.Monospace,
-        fontWeight = FontWeight.Bold,
-        fontSize = 32.sp,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 30.sp,
+        letterSpacing = 2.5.sp,
         color = TextPrimary
     ),
     headlineMedium = TextStyle(
         fontFamily = FontFamily.Monospace,
         fontWeight = FontWeight.Bold,
-        fontSize = 24.sp,
+        fontSize = 22.sp,
+        letterSpacing = 1.5.sp,
         color = TextPrimary
     ),
     titleLarge = TextStyle(
         fontFamily = FontFamily.Monospace,
-        fontWeight = FontWeight.SemiBold,
+        fontWeight = FontWeight.Bold,
         fontSize = 18.sp,
-        color = TextPrimary
+        letterSpacing = 1.2.sp,
+        color = NeonCyan
     ),
     bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = FontFamily.Monospace,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
+        fontSize = 15.sp,
+        letterSpacing = 0.5.sp,
         color = TextPrimary
     ),
     bodyMedium = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = FontFamily.Monospace,
         fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
+        fontSize = 13.sp,
+        letterSpacing = 0.5.sp,
         color = TextSecondary
     ),
     labelLarge = TextStyle(
         fontFamily = FontFamily.Monospace,
-        fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        color = NeonCyan
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 13.sp,
+        letterSpacing = 2.sp,
+        color = MatrixGreen
     )
 )
 
