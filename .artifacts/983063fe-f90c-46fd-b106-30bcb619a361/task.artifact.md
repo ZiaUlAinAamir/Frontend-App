@@ -1,0 +1,10 @@
+- `[x]` Configure dependencies & Compose in build.gradle.kts and libs.versions.toml
+- `[x]` Implement Cyber-Developer Theme & Color Palette (`Theme.kt`, `Color.kt`)
+- `[x]` Implement Course Domain Models & Repository (`Models.kt`, `CourseRepository.kt`) with rich HTML & CSS course content
+- `[x]` Implement UI Screens:
+  - `[x]` Home Dashboard (`HomeScreen.kt`)
+  - `[x]` Lesson Detail View (`LessonDetailScreen.kt`)
+  - `[x]` Practice Quiz & Challenges (`PracticeQuizScreen.kt`)
+  - `[x]` Live Code Editor Studio with WebView Preview (`CodeEditorScreen.kt`)
+- `[x]` Wire up Navigation & MainActivity (`MainActivity.kt`)
+- `[x]` Verify build (`gradle_build`)
